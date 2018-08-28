@@ -1,0 +1,401 @@
+/**
+* MIT License
+*
+* Copyright (c) 2018-present, Walmart Inc.,
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*
+*/
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#content {
+    position: relative;
+    padding: 20px;
+    min-width: 876px;
+    max-width: 1024px;
+    padding-top: 10px;
+    margin: auto;
+}
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 450px;
+    width: 600px;
+    height: 50px;
+    background-image: url('./midwaylogo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    text-indent: -1000;
+    line-height: 28px;
+}
+
+.bodyalign {
+    margin-left:30px;
+}
+
+.route-description {
+    -webkit-transition: height .1s !important;
+    transition: height .1s !important;
+}
+.route-description.selected {
+    height: auto;
+    margin-bottom: 30px;
+    /*height: 600px;*/
+    /*overflow-y: scroll;*/
+}
+.route-description.closed {
+    height: 52px;
+}
+
+.filter-container {
+    flex-grow: 1;
+}
+
+.filter-container > .input {
+    position: relative;
+    top: -4px;
+    margin-left: 28px;
+}
+
+.filter-container > .input, .filter-container > .input > input {
+    width: 100% !important;
+}
+
+.route-description {
+    position: relative;
+}
+
+.route-description h3 {
+    /*position: absolute;*/
+    top: 0px;
+    left: 16px;
+    /*margin-top: 30px;*/
+    line-height: 50px;
+    font-size: medium;
+    font-weight: normal;
+    margin-left: 2%;
+}
+
+.route-description-body {
+    margin-top: 40px;
+    margin-left: 3%;
+}
+
+.actions .button, .variants .button {
+    display: inline-block;
+    margin-top: 4px;
+}
+
+.pending-action-message h5 {
+    border-bottom: solid 1px #CCC;
+}
+
+.closed.route-description {
+    cursor: pointer;
+}
+
+.route-specific-details {
+    margin-top: 20px;
+}
+
+.permalink.button {
+    position: absolute;
+    top: 9px;
+    right: 88px;
+}
+
+.view-endpoint.button {
+    position: absolute;
+    top: 9px;
+    right: 130px;
+    margin-right:5px;
+    margin-left:100px;
+}
+
+.tab-container {
+    position: relative;
+}
+
+.tab-action-buttons {
+    position: absolute;
+    right: 20px;
+}
+
+.response-time-fill {
+    display: inline-block;
+    background-color: rgb(39, 111, 134);
+    height: 100%;
+    border-radius: 6px;
+}
+.response-time-fill.error {
+    background-color: rgb(219, 40, 40);
+}
+.response-status-code {
+    display: inline-block;
+    width: 80px;
+}
+.response-status-code.error {
+    color: rgb(219, 40, 40);
+}
+.response-time {
+    display: inline-block;
+    width: 100px;
+}
+.response-time-graph {
+    width: 400px;
+    height: 12px;
+    border: solid 1px #DEDEDE;
+    display: inline-block;
+    border-radius: 6px;
+}
+.response-viewer {
+    display: inline-block;
+    margin-left: 12px;
+}
+.path-method {
+    display: inline-block;
+    width: 80px;
+}
+.path-uri {
+    display: inline-block;
+}
+
+.variants .button {
+    width: 49%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ribbon {
+    left: calc((100% + 1rem) + 1.75em) !important;
+    top: -4px;
+}
+
+#message {
+    display: none;
+    z-index: 2;
+    width: 100%;
+    position: fixed;
+    top: 66px;
+    opacity: 1;
+    -webkit-transition: opacity 1s;
+    transition: opacity 1s;
+}
+
+#message .message {
+    margin: auto;
+    max-width: 600px;
+    padding: 6px !important;
+}
+
+#message.visible {
+    display: block;
+}
+
+#message.fading {
+    display: block;
+    opacity: 0;
+}
+
+.ui.radio.checkbox {
+    margin-bottom: 8px;
+}
+
+.group-menu {
+    margin-bottom: 12px !important;
+}
+
+.get-color {
+    color: #0d71bb;
+    background-color: white;
+}
+
+.post-color {
+    color: #1EBC30;
+    background-color: white;
+}
+
+.patch-color {
+    color: #F48870;
+    background-color: white;
+}
+
+.delete-color {
+    color: #8B0000;
+    background-color: white;
+}
+
+.put-color {
+    color: #6C3483;
+    background-color: white;
+}
+
+
+.white-background {
+    background-color: white;
+}
+
+/*.http-color {*/
+/*color: #00d4b4;*/
+/*}*/
+
+.box {
+    width: 100%; height: 100%;
+    position: relative;
+    border: 0px solid #BBB;
+    /*background:#EBF5FB;*/
+    margin-bottom:15px;
+}
+
+.get-box {
+    background: #EBF5FB;
+}
+
+.post-box {
+    background: #EAFAF1;
+}
+
+.put-box {
+    background: #E8DAEF;
+}
+
+.patch-box {
+    background: #FBEEE6;
+}
+
+.delete-box {
+    background: #FBEEE6;
+}
+
+/* box blue - #EBF5FB */
+
+.http-method-button {
+    position: relative;
+    width: 7%;
+    height: 50px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FFFAF3;
+    float: right;
+    text-align: center;
+    border: 0px;
+}
+
+.reset-button {
+    background-color: #bf3322;
+    color:#FFF;
+    text-shadow:none;
+    background-image:none;
+    text-align: center;
+    margin-right: 1em;
+    border: 0px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-appearance: button;
+    vertical-align:baseline;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius:5px;
+}
+
+/*.get-button {*/
+/*width: 5%;*/
+/*height: 50px;*/
+/*font-size: 13px;*/
+/*font-weight: bold;*/
+/*background:#0d71bb;*/
+/*color: #FFFAF3;*/
+/*float: left;*/
+/*text-align: center;*/
+/*margin-right: 1em;*/
+/*border: 0px;*/
+/*}*/
+
+/*.post-button {*/
+/*width: 5%;*/
+/*height: 50px;*/
+/*font-size: 13px;*/
+/*font-weight: bold;*/
+/*background:#1EBC30;*/
+/*color: #FFFAF3;*/
+/*float: left;*/
+/*border: 0px;*/
+/*text-align: center;*/
+/*margin-right: 1em;*/
+/*}*/
+
+
+.get {
+    background:#0d71bb;
+}
+
+.post {
+    background:#1EBC30;
+}
+
+.delete {
+    background: #8B0000;
+}
+
+.patch {
+    background: #BA4A00;
+}
+
+.put {
+    background: #5B2C6F;
+}
+
+.active-variant-button {
+    margin-top: 4px;
+    box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+    background-color: #2185D0;
+    color: #FFF;
+    cursor: pointer;
+    text-shadow: none;
+    width: 40%;
+    font-size: 1em;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-appearance: button;
+    vertical-align:baseline;
+    border-radius:5px;
+    margin: 4px;
+    border: 0px;
+    outline: none;
+}
+
+.inactive-variant-button {
+    margin-top: 4px;
+    box-shadow: 0 0 0 1px #2185D0 inset!important;
+    /*color: #FFF;*/
+    cursor: pointer;
+    width: 40%;
+    font-size: 1em;
+    display: inline-block;
+    margin: 0 .25em 0 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: inline-block;
+    -webkit-appearance: button;
+    vertical-align: baseline;
+    border: 0px;
+    border-radius: 5px;
+    background: none;
+    outline: none;
+    margin: 4px;
+}

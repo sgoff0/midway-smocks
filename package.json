@@ -1,0 +1,44 @@
+{
+  "name": "testarmada-midway-smocks",
+  "version": "1.0.1",
+  "description": "Stateful mock HTTP server using HAPI",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:TestArmada/midway-smocks.git"
+  },
+  "keywords": [
+    "hapi",
+    "mock",
+    "http"
+  ],
+  "contributors": [
+    {
+      "name": "Himanshu Jain",
+      "url": "http://github.com/hjain60"
+    },
+    {
+      "name": "Pranav Parikh",
+      "url": "http://github.com/pranavparikh"
+    },
+    {
+      "name": "Daniel Kleveros",
+      "url": "http://github.com/dankle"
+    },
+    {
+      "name": "Abha Gupta",
+      "url": "http://github.com/abhagupta"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "testarmada-midway-logger": "1.0.0",
+    "babel-core": "^6.5.2",
+    "babel-preset-react": "^6.5.0",
+    "hapi": "^16.1.0",
+    "lodash": "^3.9.3",
+    "mime-types": "^2.1.9",
+    "moment": "^2.10.6",
+    "wreck": "6.3.0"
+  }
+}
